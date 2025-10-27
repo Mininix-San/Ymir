@@ -8,145 +8,128 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --primary-color: #c0c0c0;
-      --secondary-color: #e5e7eb;
-      --accent-color: #9ca3af;
-      --silver-color: #c0c0c0;
-      --silver-dark: #a6a6a6;
-      --text-color: #f8fafc;
-      --panel-bg: rgba(192, 192, 192, 0.15);
-      --panel-border: rgba(192, 192, 192, 0.3);
-      --input-bg: rgba(255, 255, 255, 0.1);
-      --input-border: rgba(192, 192, 192, 0.5);
-      --button-primary: linear-gradient(135deg, #a1a1a1, #c0c0c0);
-      --button-hover: linear-gradient(135deg, #c0c0c0, #a1a1a1);
-      --button-active: linear-gradient(135deg, #8a8a8a, #a1a1a1);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
   <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col">
+    
     <header class="text-center mb-8 relative">
       <div class="flex items-center justify-center flex-col">
         <div class="flex items-center">
-          <h1 class="text-6xl md:text-7xl font-bold font-heading text-white tracking-wider">
+          <h1 class="text-6xl md:text-7xl font-bold font-heading tracking-wider metallic-text">
             DAOSHI STORE - YMIR
           </h1>
           <img src="https://i.imgur.com/Ip9VGha.png" alt="Ymir" class="ml-6 h-24 w-24 object-contain">
       </div>
-<p class="text-4xl md:text-5xl font-bold font-heading text-white mt-4">BORA CASHAR???</p>
-</div>
-<div class="cotacao-display absolute top-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-full border border-silver-400 shadow-md shadow-silver-500/30 flex items-center">
-<span class="icon mr-2">💱</span>
+      <p class="text-4xl md:text-5xl font-bold font-heading mt-4 metallic-text">BORA CASHAR???</p>
+      </div>
+      <div class="cotacao-display absolute top-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-full border border-silver-400 shadow-md shadow-silver-500/30 flex items-center">
+        <span class="icon mr-2">💱</span>
         <span id="cotacao">Carregando cotação...</span>
       </div>
     </header>
     
     <div class="main-content flex flex-col lg:flex-row gap-6 flex-grow">
-      <!-- Left Panel -->
+      
       <div class="panel panel-left flex-1 lg:flex-2">
         <div class="panel-header mb-6">
-          <h2 class="text-2xl font-heading relative inline-block text-center">
+          <h2 class="text-2xl font-heading relative inline-block text-center" data-titulo-grupo="grupo1">
             Pacotes de $4 e $9
           </h2>
         </div>
         
         <div class="pacote-section p-4 mb-6">
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $4:</label>
-            <input type="number" id="pacote4" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p1">Quantidade de $4:</label>
+            <input type="number" id="p1" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$3.44</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $9:</label>
-            <input type="number" id="pacote9" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p2">Quantidade de $9:</label>
+            <input type="number" id="p2" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$7.44</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
             <div class="pacote-total-label">Total:</div>
             <div class="pacote-total-value">
-              R$<span id="totalR4">0.00</span> / $<span id="totalD4">0.00</span>
+              R$<span id="totalRgrupo1">0.00</span> / $<span id="totalDgrupo1">0.00</span>
             </div>
           </div>
         </div>
         
         <div class="panel-header mb-6">
-          <h2 class="text-2xl font-heading relative inline-block text-center">
+          <h2 class="text-2xl font-heading relative inline-block text-center" data-titulo-grupo="grupo2">
             Pacotes de $23 e $30
           </h2>
         </div>
         
         <div class="pacote-section p-4">
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $23:</label>
-            <input type="number" id="pacote23" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p3">Quantidade de $23:</label>
+            <input type="number" id="p3" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$19.78</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $30:</label>
-            <input type="number" id="pacote30" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p4">Quantidade de $30:</label>
+            <input type="number" id="p4" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$25.80</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
             <div class="pacote-total-label">Total:</div>
             <div class="pacote-total-value">
-              R$<span id="totalR23">0.00</span> / $<span id="totalD23">0.00</span>
+              R$<span id="totalRgrupo2">0.00</span> / $<span id="totalDgrupo2">0.00</span>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Center Panel -->
       <div class="panel panel-center flex-1 lg:flex-2">
         <div class="panel-header mb-6">
-          <h2 class="text-2xl font-heading relative inline-block text-center">
+          <h2 class="text-2xl font-heading relative inline-block text-center" data-titulo-grupo="grupo3">
             Pacotes de $40 e $80
           </h2>
         </div>
         
         <div class="pacote-section p-4 mb-6">
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $40:</label>
-            <input type="number" id="pacote40" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p5">Quantidade de $40:</label>
+            <input type="number" id="p5" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$34.40</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="form-group mb-4">
-            <label class="block mb-1">Quantidade de $80:</label>
-            <input type="number" id="pacote80" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <label class="block mb-1" data-label-pacote="p6">Quantidade de $80:</label>
+            <input type="number" id="p6" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
             <div class="pacote-info flex justify-between mt-2">
               <span>Preço com desconto:</span>
-              <span class="pacote-price text-silver-300 font-semibold">$68.80</span>
+              <span class="pacote-price text-silver-300 font-semibold">$0.00</span>
             </div>
           </div>
           
           <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
             <div class="pacote-total-label">Total:</div>
             <div class="pacote-total-value">
-              R$<span id="totalR40">0.00</span> / $<span id="totalD40">0.00</span>
+              R$<span id="totalRgrupo3">0.00</span> / $<span id="totalDgrupo3">0.00</span>
             </div>
           </div>
         </div>
@@ -186,7 +169,6 @@
         </div>
       </div>
       
-      <!-- Right Panel -->
       <div class="panel panel-right flex-1">
         <div class="panel-header mb-6">
           <h2 class="text-2xl font-heading relative inline-block text-center">
@@ -205,7 +187,7 @@
             $<span id="totalDPacotes">0.00</span>
           </div>
           
-          <button class="btn w-full py-3 px-4 rounded-lg bg-gradient-to-r from-silver-500 to-silver-600 text-white font-medium hover:from-silver-600 hover:to-silver-500 active:from-silver-700 active:to-silver-600 transition-all duration-300 flex items-center justify-center" onclick="copiarInformacoes()">
+          <button class="btn btn-cta-pulse w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold hover:from-blue-600 hover:to-blue-500 active:from-blue-700 active:to-blue-600 transition-all duration-300 flex items-center justify-center" onclick="copiarInformacoes()">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -233,7 +215,7 @@
               Copiar Dados PIX
             </button>
           </div>
-</div>
+        </div>
         
         <div class="payment-method p-4 border-l-4 border-silver-400">
           <div class="payment-method-title flex items-center text-silver-300 text-lg mb-2">
@@ -254,12 +236,11 @@
               Copiar Email Binance
             </button>
           </div>
-</div>
+        </div>
       </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="script.js"></script>
-<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
 </body>
 </html>
