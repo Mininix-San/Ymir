@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daoshi Top Up Ymir</title>
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1lLnjQ3NYt6Bd6WapJ2p0EjzfQJIbB-es">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary-color: #c0c0c0;
+      --secondary-color: #e5e7eb;
+      --accent-color: #9ca3af;
+      --silver-color: #c0c0c0;
+      --silver-dark: #a6a6a6;
+      --text-color: #f8fafc;
+      --panel-bg: rgba(192, 192, 192, 0.15);
+      --panel-border: rgba(192, 192, 192, 0.3);
+      --input-bg: rgba(255, 255, 255, 0.1);
+      --input-border: rgba(192, 192, 192, 0.5);
+      --button-primary: linear-gradient(135deg, #a1a1a1, #c0c0c0);
+      --button-hover: linear-gradient(135deg, #c0c0c0, #a1a1a1);
+      --button-active: linear-gradient(135deg, #8a8a8a, #a1a1a1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col">
+    <header class="text-center mb-8 relative">
+      <div class="flex items-center justify-center flex-col">
+        <div class="flex items-center">
+          <h1 class="text-6xl md:text-7xl font-bold font-heading text-white tracking-wider">
+            DAOSHI STORE - YMIR
+          </h1>
+          <img src="https://i.imgur.com/Ip9VGha.png" alt="Ymir" class="ml-6 h-24 w-24 object-contain">
+      </div>
+<p class="text-4xl md:text-5xl font-bold font-heading text-white mt-4">BORA CASHAR???</p>
+</div>
+<div class="cotacao-display absolute top-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-full border border-silver-400 shadow-md shadow-silver-500/30 flex items-center">
+<span class="icon mr-2">💱</span>
+        <span id="cotacao">Carregando cotação...</span>
+      </div>
+    </header>
+    
+    <div class="main-content flex flex-col lg:flex-row gap-6 flex-grow">
+      <!-- Left Panel -->
+      <div class="panel panel-left flex-1 lg:flex-2">
+        <div class="panel-header mb-6">
+          <h2 class="text-2xl font-heading relative inline-block text-center">
+            Pacotes de $4 e $9
+          </h2>
+        </div>
+        
+        <div class="pacote-section p-4 mb-6">
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $4:</label>
+            <input type="number" id="pacote4" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$3.44</span>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $9:</label>
+            <input type="number" id="pacote9" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$7.44</span>
+            </div>
+          </div>
+          
+          <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
+            <div class="pacote-total-label">Total:</div>
+            <div class="pacote-total-value">
+              R$<span id="totalR4">0.00</span> / $<span id="totalD4">0.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel-header mb-6">
+          <h2 class="text-2xl font-heading relative inline-block text-center">
+            Pacotes de $23 e $30
+          </h2>
+        </div>
+        
+        <div class="pacote-section p-4">
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $23:</label>
+            <input type="number" id="pacote23" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$19.78</span>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $30:</label>
+            <input type="number" id="pacote30" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$25.80</span>
+            </div>
+          </div>
+          
+          <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
+            <div class="pacote-total-label">Total:</div>
+            <div class="pacote-total-value">
+              R$<span id="totalR23">0.00</span> / $<span id="totalD23">0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Center Panel -->
+      <div class="panel panel-center flex-1 lg:flex-2">
+        <div class="panel-header mb-6">
+          <h2 class="text-2xl font-heading relative inline-block text-center">
+            Pacotes de $40 e $80
+          </h2>
+        </div>
+        
+        <div class="pacote-section p-4 mb-6">
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $40:</label>
+            <input type="number" id="pacote40" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$34.40</span>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Quantidade de $80:</label>
+            <input type="number" id="pacote80" value="0" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+            <div class="pacote-info flex justify-between mt-2">
+              <span>Preço com desconto:</span>
+              <span class="pacote-price text-silver-300 font-semibold">$68.80</span>
+            </div>
+          </div>
+          
+          <div class="pacote-total flex justify-between pt-4 mt-4 border-t border-gray-700">
+            <div class="pacote-total-label">Total:</div>
+            <div class="pacote-total-value">
+              R$<span id="totalR40">0.00</span> / $<span id="totalD40">0.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="login-section">
+          <h3 class="text-xl font-heading text-center mb-4 text-silver-300">Informações de Login</h3>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Login:</label>
+            <input type="text" id="login" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Password:</label>
+            <input type="text" id="password" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Nickname:</label>
+            <input type="text" id="nickname" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Level:</label>
+            <input type="text" id="level" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Server:</label>
+            <input type="text" id="server" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+          
+          <div class="form-group mb-4">
+            <label class="block mb-1">Método de Login (ex: Gmail, Facebook):</label>
+            <input type="text" id="metodoLogin" class="w-full px-3 py-2 rounded-lg border border-silver-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-silver-300">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Panel -->
+      <div class="panel panel-right flex-1">
+        <div class="panel-header mb-6">
+          <h2 class="text-2xl font-heading relative inline-block text-center">
+            Resumo e Pagamento
+          </h2>
+        </div>
+        
+        <div class="total-section p-6 mb-6 border border-silver-400 rounded-xl">
+          <h3 class="text-xl font-heading text-center mb-4 text-silver-300">Total dos Pacotes</h3>
+          
+          <div class="total-grand text-2xl font-bold my-4 text-center text-silver-300">
+            R$<span id="totalRPacotes">0.00</span>
+          </div>
+          
+          <div class="total-grand text-2xl font-bold my-4 text-center text-silver-300">
+            $<span id="totalDPacotes">0.00</span>
+          </div>
+          
+          <button class="btn w-full py-3 px-4 rounded-lg bg-gradient-to-r from-silver-500 to-silver-600 text-white font-medium hover:from-silver-600 hover:to-silver-500 active:from-silver-700 active:to-silver-600 transition-all duration-300 flex items-center justify-center" onclick="copiarInformacoes()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Copiar Total + Login
+          </button>
+        </div>
+        
+        <div class="payment-method p-4 mb-4 border-l-4 border-silver-400">
+          <div class="payment-method-title flex items-center text-silver-300 text-lg mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            <span class="ml-2">Pix</span>
+          </div>
+          <div class="payment-details text-sm">
+            <p><strong class="text-silver-300">CELULAR:</strong> 14988231270</p>
+            <p><strong class="text-silver-300">Nome:</strong> DAOSHI TRADE</p>
+            <button class="btn-pix w-full mt-2 py-2 px-4 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 text-white font-medium hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center" onclick="copiarPix()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copiar Dados PIX
+            </button>
+          </div>
+</div>
+        
+        <div class="payment-method p-4 border-l-4 border-silver-400">
+          <div class="payment-method-title flex items-center text-silver-300 text-lg mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <circle cx="12" cy="12" r="2"></circle>
+              <path d="M6 12h.01M18 12h.01"></path>
+            </svg>
+            <span class="ml-2">Binance</span>
+          </div>
+          <div class="payment-details text-sm">
+            <p><strong class="text-silver-300">Email:</strong> daoshicashstore@gmail.com</p>
+            <button class="btn-binance w-full mt-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-medium hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 flex items-center justify-center" onclick="copiarBinance()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copiar Email Binance
+            </button>
+          </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="script.js"></script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+</body>
+</html>
